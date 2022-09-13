@@ -9,6 +9,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(methodOverride('_method'))
 app.set('view engine', 'ejs')
+// app now references stylesheets in "public" dir
+app.use(express.static(path.join(__dirname, '/public')));
 app.set('views', path.join(__dirname, 'views'))
 
 let listings = [
