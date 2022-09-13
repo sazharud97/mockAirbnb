@@ -5,7 +5,9 @@ more or less a similar implementation to the reddit mock from teh webdev course 
 So, lisitngs should be formatted like this:
 
 Title
+
 Picture
+
 Lister(rating)
 
 
