@@ -19,7 +19,9 @@
         <% for(let l of listings) { %>
             <li>
                 <h2>
-                    <%= l.title %>
+                    <a href="listings/<%=l.id%>">
+                        <%= l.title %>
+                    </a>
                 </h2>
                 <br>
                 <img src="<%= l.img %> " alt="">
