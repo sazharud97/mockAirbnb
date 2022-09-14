@@ -5,29 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Listings</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/app.css">
     <!-- important to load jquery before bootstrap js -->
     <script src="/js/jquery-3.6.0.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <title>Listing by <%= listing.lister %>
+    </title>
 </head>
 
 <body>
-    <h1>All Listings</h1>
-    <ul>
-        <% for(let l of listings) { %>
-            <li>
-                <h2>
-                    <%= l.title %>
-                </h2>
-                <br>
-                <img src="<%= l.img %> " alt="">
-                <br>
-                Listed by <%= l.lister %> (<%= l.rating %>/5 rating)
-            </li>
-            <% } %>
-    </ul>
+
 </body>
 
 </html>
