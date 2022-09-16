@@ -1,8 +1,8 @@
 # Mock Airbnb Listing project
 
-more or less a similar implementation to the reddit mock from teh webdev course but this time with Airbnb lisitngs.
+more or less a similar implementation to the reddit mock from the webdev course but this time with Airbnb lisitngs.
 
-So, lisitngs should be formatted like this:
+So, listings should be formatted like this:
 
 Title
 

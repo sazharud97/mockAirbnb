@@ -14,22 +14,28 @@
 </head>
 
 <body>
-    <h1>All Listings</h1>
+
+    <h1 class="px-5">All Listings</h1>
     <ul>
-        <% for(let l of listings) { %>
-            <li>
-                <h2>
-                    <a href="listings/<%=l.id%>">
-                        <%= l.title %>
-                    </a>
-                </h2>
-                <br>
-                <img src="<%= l.img %> " alt="">
-                <br>
-                Listed by <%= l.lister %> (<%= l.rating %>/5 rating)
-            </li>
-            <% } %>
+        <div class="container-fluid">
+            <% for(let l of listings) { %>
+                <div class="container-fluid m-3 mb-5">
+                    <li>
+                        <h2>
+                            <a href="listings/<%=l.id%>">
+                                <%= l.title %>
+                            </a>
+                        </h2>
+                        <br>
+                        <img class="img-fluid" width="50%" src="<%= l.img %> " alt="">
+                        <br>
+                        Listed by <%= l.lister %> (<%= l.rating %>/5 rating)
+                    </li>
+                </div>
+                <% } %>
+        </div>
     </ul>
+
 </body>
 
 </html>
