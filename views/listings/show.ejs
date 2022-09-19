@@ -16,14 +16,16 @@
 
 <body>
     <div class="container-fluid">
-        <h3>Rent <%= listing.lister %>'s <%= listing.title %>
+        <h3>Rent <span class="text-primary">
+                <%=listing.lister%>
+            </span>'s <%= listing.title %>
         </h3>
         <img src="<%= listing.img %> " alt="">
         <p>
             <%= listing.description %>
         </p>
         <a href="/listings">Back to all Listings</a>
-        <!-- <a href="/listings/<%=listing.id%>/edit">Edit This Listing</a> -->
+        <a href="/listings/<%=listing.id%>/edit">Edit This Listing</a>
     </div>
 </body>
 

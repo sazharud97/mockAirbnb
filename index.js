@@ -56,6 +56,16 @@ app.get('/listings/:id', (req, res) => {
     res.render('listings/show', { listing })
 })
 
+// ----- GETTING FORM FOR EDITING LISTING -----
+app.get('/listings/:id/edit', (req, res) => {
+    // taking ID from url
+    const { id } = req.params;
+    // finding a listing w/ ID matching one passed in URL
+    const listing = comments.find(c => c.id === id);
+    // rendering "edit" template w/ found listing
+    res.render('listings/edit', { listing })
+})
+
 app.listen(3000, () => {
     console.log("listening to port 3000")
 })
