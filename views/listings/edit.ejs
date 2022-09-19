@@ -10,24 +10,19 @@
     <!-- important to load jquery before bootstrap js -->
     <script src="/js/jquery-3.6.0.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <title>Listing by <%= listing.lister %>
-    </title>
+    <title>Edit listing</title>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <h3>Rent <span class="text-primary">
-                <%=listing.lister%>
-            </span>'s <%= listing.title %>
-        </h3>
-        <img src="<%= listing.img %> " alt="">
-        <p>
+    <h1> Edit </h1>
+    <!-- POST request with a method override to make it a PATCH -->
+    <!-- patches "/comments/{commentID}" to replace the 'comment' value of that item-->
+    <form method="post" action="/listings/<%=listing.id%>?_method=PATCH">
+        <textarea name="description" id="" cols=" 30" rows="10">
             <%= listing.description %>
-        </p>
-        <a href="/listings">Back to all Listings</a>
-        <br>
-        <a href="/listings/<%=listing.id%>/edit">Edit This Listing</a>
-    </div>
+        </textarea>
+        <button>Update listing</button>
+    </form>
 </body>
 
 </html>

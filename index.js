@@ -61,9 +61,23 @@ app.get('/listings/:id/edit', (req, res) => {
     // taking ID from url
     const { id } = req.params;
     // finding a listing w/ ID matching one passed in URL
-    const listing = comments.find(c => c.id === id);
+    const listing = listings.find(c => c.id === id);
     // rendering "edit" template w/ found listing
     res.render('listings/edit', { listing })
+})
+
+// ----- EDITING COMMENT TEXT THRU REQ BODY -----
+app.patch('/listings/:id', (req, res) => {
+    // taking ID from url
+    const { id } = req.params;
+    // storing what was sent in the request body/ payload
+    const newCommentText = req.body.description;
+    // finding a comment w/ ID matching one passed in URL
+    const foundListing = listings.find(c => c.id === id);
+    // replacing said comment's text w/ text from request body
+    foundListing.description = newCommentText;
+    // redirect to index
+    res.redirect('/listings')
 })
 
 app.listen(3000, () => {
