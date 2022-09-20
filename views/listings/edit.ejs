@@ -14,15 +14,34 @@
 </head>
 
 <body>
-    <h1> Edit </h1>
+    <h3> Edit <%= listing.lister %>'s Listing </h3>
     <!-- POST request with a method override to make it a PATCH -->
     <!-- patches "/comments/{commentID}" to replace the 'comment' value of that item-->
-    <form method="post" action="/listings/<%=listing.id%>?_method=PATCH">
-        <textarea name="description" id="" cols=" 30" rows="10">
-            <%= listing.description %>
-        </textarea>
-        <button>Update listing</button>
-    </form>
+    <div class="container-fluid">
+        <form method="post" action="/listings/<%=listing.id%>?_method=PATCH">
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="title">Title: </label> <br>
+                    <textarea name="title" id="" cols="40" rows="2">
+                        <%= listing.title %>
+                    </textarea>
+                </div>
+                <div class="col">
+                    <label for="img">Image URL: </label> <br>
+                    <textarea name="img" id="" cols="40" rows="2">
+                        <%=listing.img %>
+                    </textarea>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="title">Description: </label> <br>
+                <textarea name="description" id="" cols=" 30" rows="10">
+                    <%= listing.description %>
+                </textarea>
+            </div>
+            <button>Update listing</button>
+        </form>
+    </div>
 </body>
 
 </html>

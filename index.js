@@ -66,16 +66,20 @@ app.get('/listings/:id/edit', (req, res) => {
     res.render('listings/edit', { listing })
 })
 
-// ----- EDITING COMMENT TEXT THRU REQ BODY -----
+// ----- EDITING LISTING TEXT THRU REQ BODY -----
 app.patch('/listings/:id', (req, res) => {
     // taking ID from url
     const { id } = req.params;
-    // storing what was sent in the request body/ payload
-    const newCommentText = req.body.description;
-    // finding a comment w/ ID matching one passed in URL
+    // finding a listing w/ ID matching one passed in URL
     const foundListing = listings.find(c => c.id === id);
-    // replacing said comment's text w/ text from request body
-    foundListing.description = newCommentText;
+    // storing what was sent in the request body/ payload
+    const titleUpdated = req.body.title;
+    const descriptionUpdated = req.body.description;
+    const imgUpdated = req.body.img;
+    // replacing said listing's text w/ text from request body
+    foundListing.title = titleUpdated;
+    foundListing.description = descriptionUpdated;
+    foundListing.img = imgUpdated;
     // redirect to index
     res.redirect('/listings')
 })
