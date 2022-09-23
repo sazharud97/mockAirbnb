@@ -51,6 +51,12 @@ app.get('/listings/new', function (req, res) {
     res.render('listings/new')
 })
 
+app.post('/listings', (req, res) => {
+    const { title, description, img, lister, rating } = req.body;
+    listings.push({ title, description, img, lister, rating, id: uuid() })
+    res.redirect('/listings')
+})
+
 // ----- GETTING INDIVIDUAL COMMENT DETAILS BY ID -----
 app.get('/listings/:id', (req, res) => {
     // taking ID from url
