@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <!-- important to load jquery before bootstrap js -->
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <title>New Listing</title>
+</head>
+
+<body>
+    <h2 class="text-center p-4">Create a new listing</h2>
+    <div class="container-fluid border">
+        <form action="/listings" method="post">
+            <div class="form-floating p-1">
+                <!-- Listing Name -->
+                <input type="text" id="title" name="title" class="form-control" placeholder="Listing Name">
+                <label for="title">Listing Name</label>
+            </div>
+            <div class="form-floating p-1">
+                <!-- Lister -->
+                <input type="text" id="lister" name="lister" class="form-control" placeholder="Lister">
+                <label for="lister">Lister</label>
+            </div>
+            <div class="form-floating p-1">
+                <!-- Image URL -->
+                <input type="text" id="img" name="img" class="form-control" placeholder="Image URL">
+                <label for="img">Image URL</label>
+            </div>
+            <div class="form-floating p-1">
+                <!-- Description -->
+                <textarea class="form-control" name="description" id="description" cols="30" rows="10"
+                    placeholder="Description"></textarea>
+                <label for="description">Description</label>
+            </div>
+            <div class="form-floating p-1">
+                <!-- Rating -->
+                <input type="number" id="rating" name="rating" class="form-control" placeholder="Rating">
+                <label for="rating">Rating</label>
+            </div>
+            <button>Create Listing</button>
+        </form>
+    </div>
+</body>
+
+</html>

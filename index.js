@@ -46,6 +46,11 @@ app.get('/listings', function (req, res) {
     console.log(listings)
 })
 
+// ----- GETTING NEW LISTING PAGE -----
+app.get('/listings/new', function (req, res) {
+    res.render('listings/new')
+})
+
 // ----- GETTING INDIVIDUAL COMMENT DETAILS BY ID -----
 app.get('/listings/:id', (req, res) => {
     // taking ID from url
