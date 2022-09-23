@@ -19,9 +19,9 @@
     <ul class="list-unstyled">
         <div class="container-fluid">
             <% for(let l of listings) { %>
-                <div class="container-fluid m-3 mb-5">
-                    <li>
-                        <h2>
+                <div class="container-fluid m-3 mb-5 border shadow">
+                    <li class="p-2">
+                        <h2 class="p-2">
                             <a href="listings/<%=l.id%>">
                                 <%= l.title %>
                             </a>
@@ -29,7 +29,7 @@
                         <br>
                         <img class="img-fluid" width="50%" src="<%= l.img %> " alt="">
                         <br>
-                        Listed by <%= l.lister %> (<%= l.rating %>/5 rating)
+                        <span class="p-2">Listed by <%= l.lister %> (<%= l.rating %>/5 rating)</span>
                     </li>
                 </div>
                 <% } %>

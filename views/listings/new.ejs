@@ -15,9 +15,9 @@
 
 <body>
     <h2 class="text-center p-4">Create a new listing</h2>
-    <div class="container-fluid border">
-        <form action="/listings" method="post">
-            <div class="form-floating p-1">
+    <div class="container-fluid border shadow">
+        <form action="/listings" method="post" class="p-1">
+            <div class="form-floating p-1 mt-2">
                 <!-- Listing Name -->
                 <input type="text" id="title" name="title" class="form-control" placeholder="Listing Name">
                 <label for="title">Listing Name</label>
@@ -43,7 +43,7 @@
                 <input type="number" step="0.01" id="rating" name="rating" class="form-control" placeholder="Rating">
                 <label for="rating">Rating</label>
             </div>
-            <button>Create Listing</button>
+            <button class="btn btn-primary mb-2">Create Listing</button>
         </form>
     </div>
 </body>
