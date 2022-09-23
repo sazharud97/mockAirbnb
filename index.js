@@ -84,6 +84,16 @@ app.patch('/listings/:id', (req, res) => {
     res.redirect('/listings')
 })
 
+// ----- DELETING LISTING -----
+app.delete('/listings/:id', (req, res) => {
+    // taking ID from url
+    const { id } = req.params;
+    // resetting listings array to be every listing that ISN'T found listing
+    listings = listings.filter(c => c.id !== id)
+    // redirect to index
+    res.redirect('/listings')
+})
+
 app.listen(3000, () => {
     console.log("listening to port 3000")
 })
